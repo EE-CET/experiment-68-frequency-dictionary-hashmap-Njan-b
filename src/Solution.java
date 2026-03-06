@@ -4,18 +4,26 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
+        // Read input from user
         Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
         
-        // TODO: Read a single line of text
+        // Split the line into words
+        String[] words = line.trim().split("\\s+");
         
-        // TODO: Split the text into individual words
+        // Create a HashMap to store word frequencies
+        HashMap<String, Integer> frequencyMap = new HashMap<>();
         
-        // TODO: Create a HashMap to store the frequency of each word
+        // Count the frequency of each word
+        for (String word : words) {
+            frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1);
+        }
         
-        // TODO: Iterate through the words and update their frequencies in the map
+        // Print the unique words and their counts
+        for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
         
-        // TODO: Iterate through the map and print the unique words and their counts
-        // Format: "word: count"
-        
+        scanner.close();
     }
 }
